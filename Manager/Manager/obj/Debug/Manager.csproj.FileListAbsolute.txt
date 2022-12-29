@@ -1,8 +1,0 @@
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\bin\Debug\Manager.dll
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\bin\Debug\Manager.pdb
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.csprojAssemblyReference.cache
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.csproj.CoreCompileInputs.cache
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.dll
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.pdb
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.AuditEventFile.resources
-C:\Users\aleksandra\Desktop\Nikola\Projekat\Manager\obj\Debug\Manager.csproj.GenerateResource.cache
