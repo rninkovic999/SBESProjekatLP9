@@ -57,6 +57,76 @@ namespace Manager
             }
         }
 
+        public static void ReadFromFileSuccess(string userName, string fileName)
+        {
+            if(customLog!=null)
+            {
+                string ReadFromFileSuccess = AuditEvents.ReadFromFileSuccess;
+                string message = String.Format(ReadFromFileSuccess, userName, fileName);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.ReadFromFileSuccess));
+            }
+        }
+
+        public static void WriteInFileSuccess(string userName, string fileName)
+        {
+            if(customLog!=null)
+            {
+                string WriteInFileSuccess = AuditEvents.WriteInFileSuccess;
+                string message = String.Format(WriteInFileSuccess, userName, fileName);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.WriteInFileSuccess));
+            }
+        }
+
+        public static void AddSuccess(string userName, string typeOfEntity)
+        {
+            if (customLog != null)
+            {
+                string AddSuccess = AuditEvents.AddSuccess;
+                string message = String.Format(AddSuccess, userName, typeOfEntity);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.AddSuccess));
+            }
+        }
+
+        public static void ChangeSuccess(string userName, string typeOfEntity)
+        {
+            if (customLog != null)
+            {
+                string ChangeSuccess = AuditEvents.ChangeSuccess;
+                string message = String.Format(ChangeSuccess, userName, typeOfEntity);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.ChangeSuccess));
+            }
+        }
+
+        public static void PaySuccess(string userName, string oldState, string newState)
+        {
+            if (customLog != null)
+            {
+                string PaySuccess = AuditEvents.PaySuccess;
+                string message = String.Format(PaySuccess, oldState, newState);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.PaySuccess));
+            }
+        }
+
         /// <summary>
 		/// 
 		/// </summary>
@@ -74,6 +144,34 @@ namespace Manager
             else
             {
                 throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.", (int)AuditEventTypes.AuthorizationFailure));
+            }
+        }
+
+        public static void ReadFromFileFailed(string userName, string fileName, string reason)
+        {
+            if(customLog != null)
+            {
+                string ReadFromFileFailed = AuditEvents.ReadFromFileFailed;
+                string message = String.Format(ReadFromFileFailed, userName, fileName, reason);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.", (int)AuditEventTypes.ReadFromFileFailed));
+            }
+        }
+
+        public static void WriteInFileFailed(string userName, string fileName, string reason)
+        {
+            if (customLog != null)
+            {
+                string WriteInFileFailed = AuditEvents.WriteInFileFailed;
+                string message = String.Format(WriteInFileFailed, userName, fileName, reason);
+                customLog.WriteEntry(message);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.WriteInFileFailed));
             }
         }
 
