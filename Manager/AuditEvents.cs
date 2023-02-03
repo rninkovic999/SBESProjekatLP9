@@ -35,7 +35,7 @@ namespace Manager
                 {
                     if(resourceManager==null)
                     {
-                        //resourceManager = new ResourceManager (typeof(AuditEventFile).ToString(), Assembly.GetExecutingAssembly());
+                        resourceManager = new ResourceManager (typeof(AuditEventFile).ToString(), Assembly.GetExecutingAssembly());
                     }
                     return resourceManager;
                 }
