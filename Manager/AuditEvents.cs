@@ -19,7 +19,8 @@ namespace Manager
         WriteInFileFailed=6,
         AddSuccess=7,
         ChangeSuccess=8,
-        PaySuccess=9
+        PaySuccess=9,
+        MethodCallFailed=10
     }
     public class AuditEvents
     {
@@ -118,6 +119,16 @@ namespace Manager
             get
             {
                 return ResourceMgr.GetString(AuditEventTypes.PaySuccess.ToString());
+            }
+        }
+        
+        
+
+        public static string MethodCallFailed
+        {
+            get
+            {
+                return ResourceMgr.GetString(AuditEventTypes.MethodCallFailed.ToString());
             }
         }
     }
