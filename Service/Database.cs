@@ -1,15 +1,12 @@
 ﻿using Common;
-using Contracts;
 using Manager;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using Formatter = Manager.Formatter;
 
 namespace Service
 {
@@ -132,8 +129,7 @@ namespace Service
             return kor;
         }
 
-        public static void ReadRacun()
-        {
+        public static void ReadRacun() {
             try
             {
                 string paths = Path.GetFullPath(path + "racuni.txt");
@@ -392,4 +388,3 @@ namespace Service
 
     }
 }
-

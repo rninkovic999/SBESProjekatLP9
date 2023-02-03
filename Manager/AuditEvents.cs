@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using Manager;
 
 namespace Manager
 {
@@ -19,8 +20,7 @@ namespace Manager
         WriteInFileFailed=6,
         AddSuccess=7,
         ChangeSuccess=8,
-        PaySuccess=9,
-        MethodCallFailed=10
+        PaySuccess=9
     }
     public class AuditEvents
     {
@@ -119,16 +119,6 @@ namespace Manager
             get
             {
                 return ResourceMgr.GetString(AuditEventTypes.PaySuccess.ToString());
-            }
-        }
-        
-        
-
-        public static string MethodCallFailed
-        {
-            get
-            {
-                return ResourceMgr.GetString(AuditEventTypes.MethodCallFailed.ToString());
             }
         }
     }

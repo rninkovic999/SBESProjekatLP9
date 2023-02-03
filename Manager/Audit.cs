@@ -1,5 +1,4 @@
-﻿using SecurityManager;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace Manager
         {
             try
             {
-                if (!EventLog.SourceExists(SourceName))
+                if(!EventLog.SourceExists(SourceName))
                 {
                     EventLog.CreateEventSource(SourceName, LogName);
                 }
@@ -32,7 +31,7 @@ namespace Manager
 
         public static void AuthenticationSuccess(string userName)
         {
-            if (customLog != null)
+            if(customLog!=null)
             {
                 string UserAuthenticationSuccess = AuditEvents.AuthenticationSuccess;
                 string message = String.Format(UserAuthenticationSuccess, userName);
@@ -60,7 +59,7 @@ namespace Manager
 
         public static void ReadFromFileSuccess(string userName, string fileName)
         {
-            if (customLog != null)
+            if(customLog!=null)
             {
                 string ReadFromFileSuccess = AuditEvents.ReadFromFileSuccess;
                 string message = String.Format(ReadFromFileSuccess, userName, fileName);
@@ -74,7 +73,7 @@ namespace Manager
 
         public static void WriteInFileSuccess(string userName, string fileName)
         {
-            if (customLog != null)
+            if(customLog!=null)
             {
                 string WriteInFileSuccess = AuditEvents.WriteInFileSuccess;
                 string message = String.Format(WriteInFileSuccess, userName, fileName);
@@ -150,7 +149,7 @@ namespace Manager
 
         public static void ReadFromFileFailed(string userName, string fileName, string reason)
         {
-            if (customLog != null)
+            if(customLog != null)
             {
                 string ReadFromFileFailed = AuditEvents.ReadFromFileFailed;
                 string message = String.Format(ReadFromFileFailed, userName, fileName, reason);
@@ -167,20 +166,6 @@ namespace Manager
             if (customLog != null)
             {
                 string WriteInFileFailed = AuditEvents.WriteInFileFailed;
-                string message = String.Format(WriteInFileFailed, userName, fileName, reason);
-                customLog.WriteEntry(message);
-            }
-            else
-            {
-                throw new ArgumentException(string.Format("Error while trying to write even (eventid={0}) to event log.", (int)AuditEventTypes.WriteInFileFailed));
-            }
-        }
-
-        public static void MethodCallFailed(string userName, string fileName, string reason)
-        {
-            if (customLog != null)
-            {
-                string WriteInFileFailed = AuditEvents.MethodCallFailed;
                 string message = String.Format(WriteInFileFailed, userName, fileName, reason);
                 customLog.WriteEntry(message);
             }
